@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+      integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="bgn.css" />
+    <title>BGN</title>
+  </head>
+  <body>
+    <div class="container p-4">
+      <!-- header -->
+      <header>
+        <div class="fw-semibold fs-4">Nama Instance</div>
+        <div class="d-flex justify-content-between">
+          <div class="d-flex grid gap-0 column-gap-3 font-gray align-items-end">
+            <div>SS2.1</div>
+            <div>|</div>
+            <div>2 GB RAM</div>
+            <div>|</div>
+            <div>1 vCPU</div>
+            <div>|</div>
+            <div>60 GB Disk</div>
+            <div>|</div>
+            <div>Ubuntu 18.04 LTS</div>
+          </div>
+          <div>
+            <button type="button" class="btn btn-danger fw-semibold">
+              DELETE
+            </button>
+          </div>
+        </div>
+      </header>
+      <hr />
+      <!-- power state -->
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          Power State: <span class="text-tosca fw-semibold">Running</span>
+        </div>
+        <div class="">
+          <button class="btn-dis">
+            <img src="./Asset/icon-start.svg" alt="start icon" />Start
+          </button>
+          <button class="btn-small">
+            <img src="./Asset/icon-pause.svg" alt="pause icon" />Pause
+          </button>
+          <button class="btn-small">
+            <img src="./Asset/icon-restart.svg" alt="restart icon" />Restart
+          </button>
+          <button class="btn-small">
+            <img src="./Asset/icon-turnoff.svg" alt="power off icon" />Power Off
+          </button>
+        </div>
+      </div>
+      <hr />
+      <!-- table  network  -->
+      <div class="border rounded mt-5">
+        <div class="border-bottom">
+          <div class="d-flex gap-5 px-5">
+            <div class="pt-4 pb-2">Overview</div>
+            <div class="pt-4 pb-2">Access</div>
+            <div
+              class="pt-4 pb-2 border-bottom border-tosca border-3 fw-semibold"
+            >
+              Networks
+            </div>
+            <div class="pt-4 pb-2">Security Groups</div>
+            <div class="pt-4 pb-2">Volumes</div>
+            <div class="pt-4 pb-2">Snapshots</div>
+            <div class="pt-4 pb-2">Operations</div>
+          </div>
+        </div>
+
+        <!-- dropdown network  -->
+        <div class="p-5 fs-6">
+          <p class="fw-semibold fs-5">Networks</p>
+          <p class="mb-0 fw-semibold">Attach Network</p>
+          <div class="d-flex gap-3 pt-2">
+            <select
+              class="form-select"
+              id="inputGroupSelect04"
+              aria-label="Select network"
+            >
+              <option selected>Network 2</option>
+              <option value="1">Network 1</option>
+              <option value="2">Network 2</option>
+              <option value="3">Network 3</option>
+            </select>
+            <button class="btn btn-success" type="button">ATTACH</button>
+          </div>
+          
+          <!-- table  network  -->
+          <p class="mt-5 fw-semibold">Instance Networks</p>
+          <table class="table mb-5">
+            <tr class="font-light-gray">
+              <td class="">Network Name</td>
+              <td>Subnet</td>
+              <td>External Connection</td>
+              <td>Private IP</td>
+              <td>Public IP</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="text-primary">public_network</td>
+              <td>192.168.0.0/20</td>
+              <td>Public</td>
+              <td>192.168.0.13</td>
+              <td>103.93.54.188</td>
+              <td>
+                <img
+                  src="./Asset/action.svg"
+                  alt="action gray dot 3"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td class="text-primary">network1</td>
+              <td>10.10.0.0/20</td>
+              <td>Public</td>
+              <td>10.10.0.14</td>
+              <td></td>
+              <td>
+                <div class="dropdown">
+                  <a href="#" id="imageDropdown" data-bs-toggle="dropdown" >
+                    <img src="./Asset/action.svg" onclick="this.src='./Asset/action-green.svg'"/>
+                    
+                  </a>
+                  <ul
+                    class="dropdown-menu dropdown-menu-end shadow"
+                    role="menu"
+                    aria-labelledby="imageDropdown"
+                  >
+                    <li>
+                      <a class="dropdown-item border-bottom" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                        ><img
+                          src="./Asset/detach-icon.svg"
+                          alt="detach icon"
+                        />Detach Network</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#" 
+                        ><img
+                          src="./Asset/remove-icon.svg"
+                          alt="remove icon"
+                        />Remove Public IP</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+            <script></script>
+          </table>
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="px-5">
+                    <p class="text-center">Detach Network</p>
+                    <p class="text-center">Detaching network interface with Public IP will detach network interface and permanently remove the associated Public IP. You will get no refund for your previous payment of Public IP.</p>
+                    <div class="d-flex justify-content-between py-4">
+                    <button class="btn btn-cancel">CANCEL</button>
+                    <button class="btn btn-success">DETACH</button>
+                  </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
