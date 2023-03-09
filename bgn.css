@@ -103,5 +103,9 @@ td {
   border-bottom: none;
 }
 
+.mar-b {
+  margin-bottom: 1px;
+  margin-right: 5px;
+}
 
 

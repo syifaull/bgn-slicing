@@ -55,16 +55,33 @@
         </div>
         <div class="">
           <button class="btn-dis">
-            <img src="./Asset/icon-start.svg" alt="start icon" />Start
+            <img
+              src="./Asset/icon-start.svg"
+              alt="pause icon"
+              class="mar-b"
+            />Start
+          </button>
+
+          <button class="btn-small">
+            <img
+              src="./Asset/icon-pause.svg"
+              alt="pause icon"
+              class="mar-b"
+            />Pause
           </button>
           <button class="btn-small">
-            <img src="./Asset/icon-pause.svg" alt="pause icon" />Pause
+            <img
+              src="./Asset/icon-restart.svg"
+              alt="restart icon"
+              class="mar-b"
+            />Restart
           </button>
           <button class="btn-small">
-            <img src="./Asset/icon-restart.svg" alt="restart icon" />Restart
-          </button>
-          <button class="btn-small">
-            <img src="./Asset/icon-turnoff.svg" alt="power off icon" />Power Off
+            <img
+              src="./Asset/icon-turnoff.svg"
+              alt="power off icon"
+              class="mar-b"
+            />Power Off
           </button>
         </div>
       </div>
@@ -104,7 +121,7 @@
             </select>
             <button class="btn btn-success" type="button">ATTACH</button>
           </div>
-          
+
           <!-- table  network  -->
           <p class="mt-5 fw-semibold">Instance Networks</p>
           <table class="table mb-5">
@@ -123,10 +140,43 @@
               <td>192.168.0.13</td>
               <td>103.93.54.188</td>
               <td>
-                <img
-                  src="./Asset/action.svg"
-                  alt="action gray dot 3"
-                />
+                <div class="dropdown">
+                  <a href="#" id="imageDropdown" data-bs-toggle="dropdown">
+                    <img
+                      src="./Asset/action.svg"
+                      id="2"
+                      onclick="this.src='./Asset/action-green.svg'"
+                    />
+                  </a>
+                  <ul
+                    class="dropdown-menu dropdown-menu-end shadow"
+                    role="menu"
+                    aria-labelledby="imageDropdown"
+                  >
+                    <li>
+                      <a
+                        class="dropdown-item border-bottom"
+                        href="#"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal"
+                        ><img
+                          src="./Asset/detach-icon.svg"
+                          alt="detach icon"
+                          class="pb-1"
+                        />Detach Network</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="./Asset/remove-icon.svg"
+                          alt="remove icon"
+                          class="pb-1"
+                        />Remove Public IP</a
+                      >
+                    </li>
+                  </ul>
+                </div>
               </td>
             </tr>
             <tr>
@@ -137,9 +187,11 @@
               <td></td>
               <td>
                 <div class="dropdown">
-                  <a href="#" id="imageDropdown" data-bs-toggle="dropdown" >
-                    <img src="./Asset/action.svg" onclick="this.src='./Asset/action-green.svg'"/>
-                    
+                  <a href="#" id="imageDropdown" data-bs-toggle="dropdown">
+                    <img
+                      src="./Asset/action.svg"
+                      onclick="this.src='./Asset/action-green.svg'"
+                    />
                   </a>
                   <ul
                     class="dropdown-menu dropdown-menu-end shadow"
@@ -147,18 +199,24 @@
                     aria-labelledby="imageDropdown"
                   >
                     <li>
-                      <a class="dropdown-item border-bottom" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                      <a
+                        class="dropdown-item border-bottom"
+                        href="#"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal"
                         ><img
                           src="./Asset/detach-icon.svg"
                           alt="detach icon"
+                          class="pb-1"
                         />Detach Network</a
                       >
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#" 
+                      <a class="dropdown-item" href="#"
                         ><img
                           src="./Asset/remove-icon.svg"
                           alt="remove icon"
+                          class="pb-1"
                         />Remove Public IP</a
                       >
                     </li>
@@ -169,27 +227,41 @@
             <script></script>
           </table>
           <!-- Modal -->
-          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
                 <div class="modal-body">
                   <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
                   </div>
                   <div class="px-5">
                     <p class="text-center">Detach Network</p>
-                    <p class="text-center">Detaching network interface with Public IP will detach network interface and permanently remove the associated Public IP. You will get no refund for your previous payment of Public IP.</p>
+                    <p class="text-center">
+                      Detaching network interface with Public IP will detach
+                      network interface and permanently remove the associated
+                      Public IP. You will get no refund for your previous
+                      payment of Public IP.
+                    </p>
                     <div class="d-flex justify-content-between py-4">
-                    <button class="btn btn-cancel">CANCEL</button>
-                    <button class="btn btn-success">DETACH</button>
+                      <button class="btn btn-cancel">CANCEL</button>
+                      <button class="btn btn-success">DETACH</button>
+                    </div>
                   </div>
-                  </div>
-                  
                 </div>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
